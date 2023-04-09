@@ -19,7 +19,7 @@ class PostController extends Controller
         $data = Post::all();
         return Inertia::render('posts', ['data' => $data]);
     }
-  
+
     /**
      * Show the form for creating a new resource.
      *
@@ -31,13 +31,13 @@ class PostController extends Controller
             'title' => ['required'],
             'body' => ['required'],
         ])->validate();
-  
+
         Post::create($request->all());
-  
+
         return redirect()->back()
                     ->with('message', 'Post Created Successfully.');
     }
-  
+
     /**
      * Show the form for creating a new resource.
      *
